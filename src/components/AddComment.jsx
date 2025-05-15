@@ -4,7 +4,7 @@ import { Button, Container, Form } from "react-bootstrap";
 class AddComment extends Component {
   state = {
     comments: {
-      _id: this.props.comment.asin,
+      _id: "",
       comment: "",
       rate: "",
     },
@@ -13,7 +13,7 @@ class AddComment extends Component {
   handleReset = () => {
     this.setState({
       comments: {
-        _id: this.props.comment.asin,
+        _id: "",
         comment: "",
         rate: "",
       },
