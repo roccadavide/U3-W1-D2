@@ -5,6 +5,11 @@
   margin: 1rem;
 }
 
-.selected-card {
-  border: 2px solid red;
+.cards {
+  height: 1350px;
+  cursor: pointer;
+}
+
+.cardImg {
+  height: 450px;
 }

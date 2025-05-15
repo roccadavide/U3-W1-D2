@@ -1,4 +1,36 @@
-import Button from "react-bootstrap/Button";
+import { Component } from "react";
+import { Button, Card } from "react-bootstrap";
+import CommentArea from "./CommentArea";
+
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
+
+  render() {
+    return (
+      <Card
+        className="cards"
+        onClick={() => this.setState({ selected: !this.state.selected })}
+        style={{ border: this.state.selected ? "3px solid red" : "none" }}
+      >
+        <Card.Img variant="top" className="cardImg" src={this.props.book.img} />
+        <Card.Body className="d-flex flex-column align-items-center">
+          <Card.Title className="fw-bold mb-4 text-center">{this.props.book.title}</Card.Title>
+          <Card.Text>Prezzo: {this.props.book.price}$</Card.Text>
+          <Button variant="primary" className="mb-4">
+            Aggiungi al carrello
+          </Button>
+          {this.state.selected && <CommentArea asin={this.props.book.asin} />}
+        </Card.Body>
+      </Card>
+    );
+  }
+}
+
+export default SingleBook;
+
+/*import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import FantasyBooks from "../../books/fantasy.json";
 import HistoryBooks from "../../books/history.json";
@@ -66,7 +98,6 @@ class SingleBook extends Component {
 
 export default SingleBook;
 
-/*
 const bookCategories = {
     Fantasy: FantasyBooks,
     History: HistoryBooks,
