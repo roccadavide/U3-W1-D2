@@ -6,10 +6,20 @@
 }
 
 .cards {
-  height: 1350px;
+  height: 700px;
   cursor: pointer;
 }
 
 .cardImg {
   height: 450px;
+}
+
+.CommentArea {
+  border: 3px solid grey;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1000;
+  margin-left: 50px;
 }
